@@ -72,6 +72,9 @@ function blob_fixup() {
         vendor/etc/msm_irqbalance.conf)
             sed -i "s/IGNORED_IRQ=27,23,38$/&,115,332/" "${2}"
             ;;
+        vendor/bin/hw/android.hardware.security.keymint-service-qti)
+            ${PATCHELF} --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
+            ;;
     esac
 }
 
