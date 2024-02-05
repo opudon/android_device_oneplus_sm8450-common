@@ -241,19 +241,7 @@ PRODUCT_COPY_FILES += \
 # Kernel
 TARGET_BOARD_PLATFORM := taro
 
-$(call inherit-product, $(LOCAL_PATH)/kernel/kernel-platform-product.mk)
-$(call inherit-product, vendor/qcom/opensource/audio-kernel/audio_kernel_product_board.mk)
-$(call inherit-product, vendor/qcom/opensource/camera-kernel/config/waipio.mk)
-$(call inherit-product, vendor/qcom/opensource/camera-kernel/product.mk)
-$(call inherit-product, vendor/qcom/opensource/dataipa/dataipa_dlkm_vendor_product.mk)
-$(call inherit-product, vendor/qcom/opensource/datarmnet-ext/datarmnet_ext_dlkm_vendor_product.mk)
-$(call inherit-product, vendor/qcom/opensource/datarmnet/datarmnet_dlkm_vendor_product.mk)
-$(call inherit-product, vendor/qcom/opensource/display-drivers/display_driver_product.mk)
-$(call inherit-product, vendor/qcom/opensource/eva-kernel/eva_kernel_product.mk)
-$(call inherit-product, vendor/qcom/opensource/mmrm-driver/mmrm_kernel_board.mk)
-$(call inherit-product, vendor/qcom/opensource/video-driver/video_kernel_board.mk)
-
-# Keymaster
+# Keymaster 
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster_messages.vendor
@@ -374,6 +362,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
+    android.frameworks.stats-V1-ndk_platform \
+    android.frameworks.stats-V1-ndk_platform.vendor \
+    android.frameworks.sensorservice@1.0 \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
     libprotobuf-cpp-full \
@@ -385,6 +377,7 @@ PRODUCT_PACKAGES += \
     libsensorndkbridge \
     android.frameworks.sensorservice@1.0 \
     android.frameworks.sensorservice@1.0.vendor \
+    sensors.dynamic_sensor_hal \
     sensors.oplus
 
 PRODUCT_COPY_FILES += \

@@ -95,38 +95,57 @@ ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_dsds.xml
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
 
+# DTBO
+BOARD_PREBUILT_DTBOIMAGE := $(COMMON_PATH)/prebuilts/dtbo.img
+TARGET_PREBUILT_DTB := $(COMMON_PATH)/prebuilts/dtb.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+
 # Kernel
-# is-board-platform-in-list is used in split files below
-# from https://git.codelinaro.org/clo/la/platform/vendor/qcom-opensource/core-utils/-/blob/LA.QSSI.12.0.r1-08700.03-qssi.0/build/utils.mk
-include $(COMMON_PATH)/build/utils.mk
-
-include $(COMMON_PATH)/kernel/kernel-platform-board.mk
-include vendor/qcom/opensource/audio-kernel/audio_kernel_vendor_board.mk
-include vendor/qcom/opensource/camera-kernel/board.mk
-include vendor/qcom/opensource/dataipa/dataipa_dlkm_vendor_board.mk
-include vendor/qcom/opensource/datarmnet-ext/datarmnet_ext_dlkm_vendor_board.mk
-include vendor/qcom/opensource/datarmnet/datarmnet_dlkm_vendor_board.mk
-include vendor/qcom/opensource/display-drivers/display_driver_board.mk
-include vendor/qcom/opensource/eva-kernel/eva_kernel_board.mk
-include vendor/qcom/opensource/mmrm-driver/mmrm_kernel_board.mk
-include vendor/qcom/opensource/video-driver/video_kernel_board.mk
-
 BOARD_BOOT_HEADER_VERSION := 4
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_BOOTCONFIG := \
+BOARD_BOOTCONFIG:= \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.selinux=permissive
+    androidboot.usbcontroller=a600000.dwc3
 
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     msm_geni_serial.con_enabled=0
 
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+TARGET_KERNEL_CLANG_VERSION := r450784e
+TARGET_KERNEL_SOURCE := kernel/oneplus/sm8450
+TARGET_KERNEL_CONFIG := gki_defconfig vendor/waipio_GKI.config
+
+# Kernel modules
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(TARGET_KERNEL_SOURCE)/modules.vendor_blocklist.msm.waipio
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.vendor_boot))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
+BOOT_KERNEL_MODULES := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
+TARGET_KERNEL_EXT_MODULE_ROOT := kernel/oneplus/sm8450-modules
+TARGET_KERNEL_EXT_MODULES := \
+    qcom/opensource/mmrm-driver \
+    qcom/opensource/audio-kernel \
+    qcom/opensource/camera-kernel \
+    qcom/opensource/dataipa/drivers/platform/msm \
+    qcom/opensource/datarmnet/core \
+    qcom/opensource/datarmnet-ext/aps \
+    qcom/opensource/datarmnet-ext/offload \
+    qcom/opensource/datarmnet-ext/shs \
+    qcom/opensource/datarmnet-ext/perf \
+    qcom/opensource/datarmnet-ext/perf_tether \
+    qcom/opensource/datarmnet-ext/sch \
+    qcom/opensource/datarmnet-ext/wlan \
+    qcom/opensource/display-drivers/msm \
+    qcom/opensource/eva-kernel \
+    qcom/opensource/video-driver \
+    qcom/opensource/wlan/qcacld-3.0
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -163,7 +182,6 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/init/fstab.default
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -241,7 +259,6 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 WIFI_DRIVER_INSTALL_TO_KERNEL_OUT := true
-BOARD_VENDOR_KERNEL_MODULES += $(KERNEL_MODULES_OUT)/qca_cld3_qca6490.ko
 
 # Include the proprietary files BoardConfig.
 include vendor/oneplus/sm8450-common/BoardConfigVendor.mk
