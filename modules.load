@@ -1,9 +1,10 @@
 oplus_locking_strategy.ko
 msm_sysstats.ko
+oplus_bsp_uxmem_opt.ko
+oplus_bsp_dynamic_readahead.ko
 oplus_bsp_zram_opt.ko
-oplus_bsp_dump_tasks_mm.ko
+oplus_bsp_proactive_compact.ko
 oplus_bsp_zsmalloc.ko
-oplus_bsp_hybridswap_zram.ko
 crypto_zstdn.ko
 oplus_bsp_pcppages_opt.ko
 oplus_bsp_kshrink_lruvecd.ko
