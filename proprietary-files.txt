@@ -1402,7 +1402,6 @@ vendor/lib64/vendor.qti.hardware.vpp@2.0.so
 odm/bin/hw/android.hardware.drm@1.4-service.widevine
 odm/etc/init/android.hardware.drm@1.4-service.widevine.rc
 odm/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-odm/lib64/liboemcrypto.so
 odm/lib64/mediadrm/libwvdrmengine.so
 vendor/etc/oplus_Widevine_licenses.pfm
 vendor/lib64/libtrustedapploader.so
