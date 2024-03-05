@@ -63,7 +63,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.pal@1.0-impl \
     libhfp_pal
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml
