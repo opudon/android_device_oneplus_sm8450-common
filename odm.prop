@@ -14,6 +14,7 @@ persist.vendor.bluetooth.modem_nv_support=true
 # Display
 ro.vendor.display.sensortype=2
 vendor.display.primary_mixer_stages=9
+persist.vendor.display.pxlw.iris_feature=0x400080
 
 # Media
 ro.odm.build.media_performance_class=31
