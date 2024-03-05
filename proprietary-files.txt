@@ -361,7 +361,6 @@ vendor/bin/hw/vendor.qti.hardware.display.composer-service
 vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
 vendor/etc/snapdragon_color_libs_config.xml
-vendor/etc/vintf/manifest/manifest_panelchaplin.xml
 vendor/lib64/libbacklight-calib.so
 vendor/lib64/libcwb_qcom.so
 vendor/lib64/libdigital-dimming.so
@@ -378,27 +377,12 @@ vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmutils.so
 vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
-vendor/lib64/vendor.display.PanelChaplin@1.0.so
-vendor/lib64/vendor.oplus.hardware.display.MixLut3D-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.cwb@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Display (Pixelworks)
-odm/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service
-odm/bin/irisConfig
-odm/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
-odm/etc/vintf/manifest/vendor.pixelworks.hardware.display@1.2.xml
-odm/etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml
-odm/lib64/hw/vendor.pixelworks.hardware.display@1.0-impl-1.2.so
-odm/lib64/libpwirisIoctlWrapper.so
-odm/lib64/libpwirisPCS.so
-odm/lib64/libpwiriscalibrate.so
 odm/lib64/libpwirisfeature.so
 odm/lib64/libpwirishalwrapper.so
-odm/lib64/libpwirispq.so
-odm/lib64/libpwirisservice.so
-odm/lib64/libpwirissoft.so
-odm/lib64/libpwsoftirisPCS.so
 odm/lib64/libsnapdragoncolor-pxlw.so
 odm/lib64/vendor.pixelworks.hardware.display@1.0.so
 odm/lib64/vendor.pixelworks.hardware.display@1.1.so
@@ -410,6 +394,7 @@ vendor/lib64/libpwirishalwrapper.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.0.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.1.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.2.so
+vendor/lib64/vendor.pixelworks.hardware.feature-V1-ndk_platform.so
 vendor/lib64/vendor.pixelworks.hardware.feature@1.0.so
 vendor/lib64/vendor.pixelworks.hardware.feature@1.1.so
 
@@ -515,7 +500,7 @@ vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
-# Graphics - Adreno
+# Graphics (Adreno)
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -1469,10 +1454,11 @@ vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi Display (system)
 system/framework/WfdCommon.jar
-system_ext/bin/wfdservice
+system_ext/bin/wfdservice64
 system_ext/etc/init/wfdservice.rc
-system_ext/etc/seccomp_policy/wfdservice.policy
+system_ext/etc/seccomp_policy/wfdservice64.policy
 system_ext/etc/wfdconfigsink.xml
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 system_ext/lib64/com.qualcomm.qti.wifidisplayhal@1.0.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
