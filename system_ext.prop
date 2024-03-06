@@ -17,6 +17,9 @@ ro.charger.enable_suspend=1
 # DPM
 persist.vendor.dpm.feature=11
 
+# Display
+persist.sys.brightness.low.gamma=true
+
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
 
