@@ -567,6 +567,7 @@ vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblocdiagiface.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
+vendor/lib64/libpal_net_if.so
 vendor/lib64/libqcc_file_agent.so
 vendor/lib64/libqdma_file_agent.so
 vendor/lib64/libqppe.so
@@ -799,23 +800,7 @@ odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so
 # Perf
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
-
-# Power
-vendor/bin/poweropt-service
-vendor/etc/init/poweropt-service.rc
-vendor/etc/pwr/PSMPowerOptFeature.xml
-vendor/etc/pwr/PowerFeatureConfig.xml
-vendor/etc/pwr/StandbyFeature.xml
-vendor/etc/pwr/VendorScenarioPowerOptFeature.xml
-vendor/etc/pwr/VideoPowerOptFeature.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
-vendor/lib64/libpowercallback.so
-vendor/lib64/libpowercore.so
-vendor/lib64/libpsmoptfeature.so
-vendor/lib64/libstandbyfeature.so
-vendor/lib64/libvendorscenariopoweroptfeature.so
-vendor/lib64/libvideooptfeature.so
-vendor/lib64/vendor.qti.hardware.power.powermodule@1.0.so
+vendor/lib64/vendor.qti.qspmhal@1.0.so
 
 # Power-off alarm - from OnePlus 11R (CPH2487_13.1.0.583(EX01)).
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|45c973fe28d2c64fd8954dc9ea02622c40967d8a
