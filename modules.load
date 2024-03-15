@@ -131,9 +131,6 @@ hdcp_qseecom.ko
 qseecom-mod.ko
 cs_press_f71.ko
 oplus_bsp_rfcablemonitor.ko
-sim_detect.ko
-oem_qmi_client.ko
-oplus_gpio.ko
 aw8697.ko
 haptic.ko
 haptic_feedback.ko
