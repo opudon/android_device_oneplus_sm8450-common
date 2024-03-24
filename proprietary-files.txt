@@ -318,7 +318,7 @@ vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
 
-# Display (Features)
+# Display (Features) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/bin/feature_enabler_client
 vendor/etc/Oplus_QC_LTM_Dev_2020_10_30.pfm
 vendor/etc/Oplus_QC_LTM_SM7475_2023_02_01.pfm
@@ -327,10 +327,10 @@ vendor/etc/Oplus_QC_LTM_SM8475_2022_05_10.pfm
 vendor/etc/Oplus_QC_LTM_SM8475_2022_07_05.pfm
 vendor/etc/init/feature_enabler_client.rc
 
-# Display
+# Display - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/lib64/vendor.qti.hardware.display.config-V5-ndk_platform.so
 
-# Display (HDR)
+# Display (HDR) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/lib64/libgame_enhance.so
 vendor/lib64/libhdr_backlight_adapter.so
 vendor/lib64/libhdr_tm.so
@@ -338,7 +338,7 @@ vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhdr_stub.so
 
-# Display (HWC)
+# Display (HWC) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 odm/etc/vintf/manifest/manifest_oplus_cwb.xml
 odm/lib64/libdpservice.so
 odm/lib64/vendor.oplus.hardware.cwb@1.0.so
@@ -365,7 +365,7 @@ vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/vendor.oplus.hardware.cwb@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# Display (Pixelworks)
+# Display (Pixelworks) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 odm/lib64/libpwirisfeature.so
 odm/lib64/libpwirishalwrapper.so
 odm/lib64/libsnapdragoncolor-pxlw.so
@@ -383,7 +383,7 @@ vendor/lib64/vendor.pixelworks.hardware.feature-V1-ndk_platform.so
 vendor/lib64/vendor.pixelworks.hardware.feature@1.0.so
 vendor/lib64/vendor.pixelworks.hardware.feature@1.1.so
 
-# Display (SDM)
+# Display (SDM) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/etc/display/DPU660.xml
 vendor/etc/display/DPU670.xml
 vendor/etc/display/DPU720.xml
@@ -477,7 +477,7 @@ vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
-# Graphics (Adreno)
+# Graphics (Adreno) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/gpu/kbc/sequence_manifest.bin
 vendor/gpu/kbc/unified_kbcs_32.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
@@ -502,7 +502,7 @@ vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 -vendor/app/com.qualcomm.qti.gpudrivers.taro.api32/com.qualcomm.qti.gpudrivers.taro.api32.apk
 
-# Graphics (Vulkan)
+# Graphics (Vulkan) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
 vendor/lib64/hw/vulkan.adreno.so
 
 # GNSS
