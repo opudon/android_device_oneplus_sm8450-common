@@ -366,14 +366,28 @@ vendor/lib64/vendor.oplus.hardware.cwb@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Display (Pixelworks) - from OnePlus 11R (CPH2487_14.0.0.501(EX01)).
+odm/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service
+odm/bin/irisConfig
+odm/etc/init/vendor.pixelworks.hardware.feature.irisfeature-service.rc
+odm/etc/vintf/manifest/vendor.pixelworks.hardware.display@1.2.xml
+odm/etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml
+odm/lib64/hw/vendor.pixelworks.hardware.display@1.0-impl-1.2.so
+odm/lib64/libpwirisIoctlWrapper.so
+odm/lib64/libpwirisPCS.so
+odm/lib64/libpwiriscalibrate.so
 odm/lib64/libpwirisfeature.so
 odm/lib64/libpwirishalwrapper.so
+odm/lib64/libpwirispq.so
+odm/lib64/libpwirisservice.so
+odm/lib64/libpwirissoft.so
+odm/lib64/libpwsoftirisPCS.so
 odm/lib64/libsnapdragoncolor-pxlw.so
 odm/lib64/vendor.pixelworks.hardware.display@1.0.so
 odm/lib64/vendor.pixelworks.hardware.display@1.1.so
 odm/lib64/vendor.pixelworks.hardware.display@1.2.so
 odm/lib64/vendor.pixelworks.hardware.feature@1.0.so
 odm/lib64/vendor.pixelworks.hardware.feature@1.1.so
+vendor/etc/snapdragon_color_libs_config.xml
 vendor/lib64/libpwirisfeature.so
 vendor/lib64/libpwirishalwrapper.so
 vendor/lib64/vendor.pixelworks.hardware.display@1.0.so
@@ -1003,7 +1017,6 @@ vendor/lib64/libnetmgrxfrmutils.so
 vendor/lib64/libnlnetmgr.so
 vendor/lib64/libpdmapper.so
 vendor/lib64/libpdnotifier.so
-vendor/lib64/libprotobuf-cpp-full-3.9.1.so
 vendor/lib64/libqcbor.so
 vendor/lib64/libqcrilDataModule.so
 vendor/lib64/libqcrilNr.so
