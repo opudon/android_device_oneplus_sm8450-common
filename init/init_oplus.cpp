@@ -33,13 +33,15 @@ void OverrideProperty(const char* name, const char* value) {
  * after the original property has been set.
  */
 void vendor_load_properties() {
-    auto device = GetProperty("ro.product.product.device", "");
     auto prjname = std::stoi(GetProperty("ro.boot.prjname", "0"));
 
     switch (prjname) {
         // udon
         case 22881: // IN
             OverrideProperty("ro.product.product.model", "CPH2487");
+            break;
+        case 22803:
+            OverrideProperty("ro.product.product.model", "PHK110");    
             break;
         default:
             LOG(ERROR) << "Unexpected project name: " << prjname;
